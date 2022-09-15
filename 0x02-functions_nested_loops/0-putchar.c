@@ -1,4 +1,5 @@
-#include "main.c"
+#include "main.h"
+int main(void);
 /**
  * main - Entry point
  *
