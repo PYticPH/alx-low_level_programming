@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * print_alphabet_x10: Function to print alphabet
+ * print_alphabet_x10 - Function to print alphabet
  *
- * Description: print alphabet ten times in a new line
+ * Description: Print alphabet in new line
  *
- * eeturn: (void)
+ * return: (void)
  */
 
 void print_alphabet_x10(void)
