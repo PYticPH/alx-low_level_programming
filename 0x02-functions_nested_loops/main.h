@@ -2,4 +2,4 @@
  * file type: c header file
  */
 
-int main(void);
+int _putchar(char);
