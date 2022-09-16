@@ -4,7 +4,7 @@
  *
  * @a: varaible/parameter
  *
- * Result: 0
+ * Return: 0
  */
 
 int _abs(int a)
