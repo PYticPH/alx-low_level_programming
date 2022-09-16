@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _islower - Fumction to compare case
+ * _islower - Function to compare case
  *
  * @c: argument to function _islower
  *
