@@ -1,4 +1,6 @@
 #include  "main.h"
+
+int _strlen(char *c);
 /**
  * print_rev  - function  to print string in  reverse
  *
@@ -9,16 +11,31 @@
 
 void print_rev(char  *s)
 {
-	char x = 0;
+	int len;
 
-	while  (*(s + x) != '\0')
+	len = _strlen(s);
+	while (len >= 0)
 	{
-		x++;
-	}
-	while (x > -1)
-	{
-		--x;
-		_putchar(*(s + x));
+		_putchar(*(s + len));
+		len--;
 	}
 	_putchar(10);
+}
+
+/**
+ * _strlen  -generate string length
+ *
+ * @c: parameter
+ *
+ * Return: (0)
+ */
+
+int _strlen(char *c)
+{
+	int x;
+	int count = 1;
+
+	for (x = 0; *(c + x) != '\0'; x++)
+		count += 1;
+	return (count);
 }
