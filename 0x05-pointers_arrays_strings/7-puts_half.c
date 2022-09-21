@@ -12,14 +12,14 @@ void puts_half(char *str)
 	int len, half_len;
 	int x;
 
-	len = _strlen(str);
+	len = _strlen(str) - 1;
 
 	if (len % 2 == 0)
 		half_len = len / 2;
 	else
 		half_len = (len - 1) / 2;
 	for (x = half_len; x <= len; x++)
-		_putchar(*(str + x));
+		_putchar(*(str + (x + 1)));
 	_putchar(10);
 }
 
@@ -37,6 +37,7 @@ int _strlen(char *c)
 {
 	int count = 0;
 	int x;
+
 	for (x = 0; c[x] != '\0'; x++)
 		count += 1;
 	return (count);
