@@ -11,7 +11,7 @@
 char *_strcpy(char *dest, char *src)
 {
 	int lpn, x;
-	
+
 	lpn = _strlen(src);
 
 	for (x = 0; x <= lpn; x++)
@@ -38,5 +38,5 @@ int _strlen(char *s)
 
 	for (x = 0; s[x] != '\0'; x++)
 		count += 1;
-	return count;
+	return (count);
 }
