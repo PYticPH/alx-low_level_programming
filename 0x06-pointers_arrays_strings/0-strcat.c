@@ -14,10 +14,9 @@ char *_strcat(char *dest, char *src)
 {
 	char *sptr;
 	int len, x, y;
-	int dlen = sizeof(dest);
 
 	len = _strlen(src);
-	for (x = 0; x < dlen; x++)
+	for (x = 0; x > -1; x++)
 	{
 		if (dest[x] == '\0')
 		{
