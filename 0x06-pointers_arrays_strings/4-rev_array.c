@@ -4,17 +4,15 @@
  * reverse_array - function to  reverse  an  array
  *
  * @a: parameter
- * @b: parameter
+ * @n: parameter
  *
  * Return: void
  */
 
-void reverse_string(int *a, int n)
+void reverse_array(int *a, int n)
 {
-	int size_a = sizeof(a);
-	int size_int = sizeof(a[0]);
-	int limit = size_a +  size_int;
-
-	for (;limit >= n && n > -1; n--)
-		_putchar(a[n]);
+	int x;
+	
+	for (x = 0; x <= n; n--)
+		_putchar(a[n] + '0');
 }
