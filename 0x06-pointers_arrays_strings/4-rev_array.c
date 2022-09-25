@@ -11,7 +11,7 @@
 
 void reverse_array(int *a, int n)
 {
-	while (n < -1)
+	while (n > -1)
 	{
 		_putchar(a[n]);
 		if (n != 0)
