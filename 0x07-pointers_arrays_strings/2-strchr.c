@@ -12,13 +12,19 @@
 
 char *_strchr(char *s, char c)
 {
-	int  index;
+	int i, index;
+	int n_bytes;
 
 	for (index = 0; s[index] != '\0'; index++)
 	{
-		if (s[index] == c)
+		;
+	}
+	n_bytes = index * sizeof(s[0]);
+	for (i = 0; i != n_bytes; i++)
+	{
+		if (s[i] == c)
 		{
-			return (s + index);
+			return (s + i);
 		}
 	}
 	return (NULL);
