@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
  * _strchr - Function to locate a character in a function
@@ -12,16 +13,13 @@
 char *_strchr(char *s, char c)
 {
 	int  index;
-	char *ptr;
 
 	for (index = 0; s[index] != '\0'; index++)
 	{
 		if (s[index] == c)
 		{
-			ptr = s + index;
-			return (ptr);
+			return (s + index);
 		}
 	}
-	ptr = 0;
-	return (ptr);
+	return (NULL);
 }
