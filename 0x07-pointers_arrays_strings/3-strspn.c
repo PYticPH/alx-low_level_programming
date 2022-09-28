@@ -1,6 +1,5 @@
 #include "main.h"
 
-int blklen(char *c);
 /**
  * _strspn - Function to get length of prefix substring
  *
