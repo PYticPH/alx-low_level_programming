@@ -22,9 +22,8 @@ char *_strchr(char *s, char c)
 	for (i = 0; i != n_bytes; i++)
 	{
 		if (s[i] == c)
-		{
 			return (s + i);
-		}
+		else
+			return ('\0');
 	}
-	return ('\0');
 }
