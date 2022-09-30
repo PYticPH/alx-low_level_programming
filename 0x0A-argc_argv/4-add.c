@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	do {
 		if (argc == 1)
 			break;
-		else if (isalpha(*argv[i]))
+		else if (*argv[i] < '0' || *argv[i] > '9')
 		{
 			printf("Error\n");
 			return (1);
