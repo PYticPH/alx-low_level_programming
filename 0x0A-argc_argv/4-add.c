@@ -3,7 +3,7 @@
 #include <stdlib.h>
 /**
  * main - Entry point
- * 
+ *
  * @argc: parameter
  * @argv: array of parameters
  *
@@ -14,8 +14,8 @@ int main(int argc, char *argv[])
 {
 	int i = 1;
 	int sum = 0;
-	do
-	{
+
+	do {
 		if (argc == 1)
 			break;
 		else if (!(isdigit(*argv[i])))
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 		else
 			sum += atoi(argv[i]);
 		i++;
-	}while(i < argc);
+	} while (i < argc);
 	printf("%d\n", sum);
 	return (0);
 }
