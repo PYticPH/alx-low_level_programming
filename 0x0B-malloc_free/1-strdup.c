@@ -38,8 +38,11 @@ int _strlen(char *c)
 	int i;
 	int count = 0;
 
+	if (c == NULL)
+		return ('\0');
+	
 	for (i = 0; c[i] != '\0'; i++)
 		count += 1;
-	return (count);
+	return (count + 1);
 }
 
