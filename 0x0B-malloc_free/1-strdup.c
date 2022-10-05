@@ -40,7 +40,6 @@ int _strlen(char *c)
 
 	if (c == NULL)
 		return ('\0');
-	
 	for (i = 0; c[i] != '\0'; i++)
 		count += 1;
 	return (count + 1);
