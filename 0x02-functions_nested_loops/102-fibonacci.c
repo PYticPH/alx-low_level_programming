@@ -21,9 +21,10 @@ int main(void)
 		tmp_3 = tmp_1 + tmp_2;
 		tmp_1 = tmp_2;
 		tmp_2 = tmp_3;
-		printf("%lu, ", tmp_3);
+		printf("%lu", tmp_3);
+		if (i != 50)
+			printf(", ");
 	}
-	printf("%lu", tmp_3);
 	printf("\n");
 	return (0);
 }
