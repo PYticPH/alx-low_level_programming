@@ -16,7 +16,7 @@ int main(void)
 	long tmp_2 = 1;
 	long tmp_3;
 
-	for (i = 0; i <= 50; i++)
+	for (i = 1; i <= 50; i++)
 	{
 		tmp_3 = tmp_1 + tmp_2;
 		tmp_1 = tmp_2;
