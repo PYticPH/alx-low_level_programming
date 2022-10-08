@@ -6,10 +6,10 @@
  *
  * Description: program to print the first 50 fibonacci sequence
  *
- * Return: void
+ * Return: 0
  */
 
-void main(void)
+int main(void)
 {
 	int i;
 	long tmp_1 = 0;
@@ -25,4 +25,5 @@ void main(void)
 	}
 	printf("%lu", tmp_3);
 	printf("\n");
+	return (0);
 }
