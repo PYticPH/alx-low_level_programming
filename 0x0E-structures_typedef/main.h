@@ -1,4 +1,0 @@
-/**
- * Filetype: header file
- */
-
