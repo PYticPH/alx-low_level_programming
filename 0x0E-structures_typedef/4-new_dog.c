@@ -36,6 +36,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (newDog->owner == NULL)
 	{
 		free(newDog->owner);
+		free(newDog);
 		return (NULL);
 	}
 	for (i = 0; i <= lenOwner; i++)
@@ -63,6 +64,6 @@ int _strlen(char *c)
 	{
 		length += 1;
 	}
-	return (length + 1);
+	return (length);
 }
 
