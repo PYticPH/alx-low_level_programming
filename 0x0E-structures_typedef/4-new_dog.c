@@ -63,6 +63,6 @@ int _strlen(char *c)
 	{
 		length += 1;
 	}
-	return (length);
+	return (length + 1);
 }
 
