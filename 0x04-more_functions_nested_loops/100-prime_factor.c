@@ -10,25 +10,22 @@
 
 int main(void)
 {
-	int i, j, x, z;
-	long int num = 612852475143;
+	int i;
+	long num = 612852475143;
 
-	for ( i = 1; i <= num; i++)
+	for (i = 1; i < (num / 2); i++)
 	{
-		x = 0;
-		for (j = 1; j <= i; j++)
+		if (i % 2 == 0)
 		{
-			if (i % j == 0)
-				x += 1;
+			num /= 2;
+			continue;
 		}
-		if (x >= 1  && x <= 2)
+		for (i = 3; i < (num / 2); i += 2)
 		{
-			if (num % i == 0)
-				z = i;
+			if ((num % i) == 0)
+				num /= i;
 		}
 	}
-	printf("%d", z);
+	printf("%ld\n", num);
 	return (0);
 }
-			
-
