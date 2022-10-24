@@ -17,4 +17,4 @@ syscall
 
 section   .data
 message:  db        "Hello, Holberton",10,0;
-   fmti:  db        "%d",10,0
+   fmti:  db        "%d"
