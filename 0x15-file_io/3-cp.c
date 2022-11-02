@@ -23,20 +23,22 @@ void errorStatus(char *filename, int code)
 }
 
 /**
- * fdError - Function to print file descriptor error
+ * fdHandler - Function to handle file descriptor error
  *
  * @fd: file descriptor
- * @code: status code
  *
  * Return: void
  */
 
-void fdError(int fd, int code)
+void fdHandler(int fd)
 {
-	if (fd == -1)
+	int cFd;
+
+	cFd = fd;
+	if (cfd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-		exit(code);
+		exit(100);
 	}
 }
 
@@ -134,11 +136,8 @@ int main(int argc, char *argv[])
 	} while (readFrom > 0);
 
 	free(buffer);
-	close(src);
-	close(dest);
-
-	fdError(src, 100);
-	fdError(dest, 100);
+	fdHandler(src);
+	fdHandler(dest);
 
 	return (0);
 }

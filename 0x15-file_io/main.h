@@ -14,7 +14,7 @@ int _strlen(char *);
 int append_text_to_file(const char *, char *);
 int openFile(char *, int);
 void errorStatus(char *, int);
-void fdError(int, int);
+void fdHandler(int);
 char *createBuffer(char *);
 
 #endif
