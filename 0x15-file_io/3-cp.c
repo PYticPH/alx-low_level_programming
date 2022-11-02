@@ -134,11 +134,11 @@ int main(int argc, char *argv[])
 	} while (readFrom > 0);
 
 	free(buffer);
-	fdError(src, 100);
-	fdError(dest, 100);
-
 	close(src);
 	close(dest);
+
+	fdError(src, 100);
+	fdError(dest, 100);
 
 	return (0);
 }
