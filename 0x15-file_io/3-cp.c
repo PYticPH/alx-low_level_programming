@@ -132,7 +132,6 @@ int main(int argc, char *argv[])
 		}
 
 		readFrom = read(src, buffer, 1024);
-		dest = open(argv[2], O_APPEND | O_WRONLY);
 	} while (readFrom > 0);
 
 	free(buffer);
