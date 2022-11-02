@@ -13,11 +13,11 @@ void errorStatus(char *filename, int code)
 {
 
 	if (code == 97)
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 	else if (code == 98)
-		dprintf(2, "Error: Can't read from file %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 	else if (code == 99)
-		dprintf(2, "Error: Can't write to %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 
 	exit(code);
 }
@@ -35,7 +35,7 @@ void fdError(int fd, int code)
 {
 	if (fd == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(code);
 	}
 }
@@ -77,10 +77,18 @@ int openFile(char *filename, int mode)
 	int fd;
 
 	if (mode == 4)
+	{
+		if (filename == NULL)
+			errorStatus(filename, 98);
 		fd = open(filename, O_RDONLY);
+	}
 	else if (mode == 2)
+	{
+		if (filename == NULL)
+			errorStatus(filename, 99);
 		fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0664);
-
+	}
+	
 	return (fd);
 }
 
@@ -107,8 +115,7 @@ int main(int argc, char *argv[])
 
 	dest = openFile(argv[2], 2);
 
-	while (readFrom > 0)
-	{
+	do {
 		if (src == -1 || readFrom == -1)
 		{
 			free(buffer);
@@ -124,7 +131,7 @@ int main(int argc, char *argv[])
 
 		readFrom = read(src, buffer, 1024);
 		dest = open(argv[2], O_APPEND | O_WRONLY);
-	}
+	} while (readFrom > 0);
 
 	free(buffer);
 	fdError(src, 100);
