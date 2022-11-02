@@ -77,17 +77,9 @@ int openFile(char *filename, int mode)
 	int fd;
 
 	if (mode == 4)
-	{
 		fd = open(filename, O_RDONLY);
-		if (fd == -1 || filename == NULL)
-			errorStatus(filename, 98);
-	}
 	else if (mode == 2)
-	{
 		fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0664);
-		if (fd == -1 || filename == NULL)
-			errorStatus(filename, 99);
-	}
 
 	return (fd);
 }
@@ -134,10 +126,10 @@ int main(int argc, char *argv[])
 		dest = open(argv[2], O_APPEND | O_WRONLY);
 	}
 
+	free(buffer);
 	fdError(src, 100);
 	fdError(dest, 100);
 
-	free(buffer);
 	close(src);
 	close(dest);
 
