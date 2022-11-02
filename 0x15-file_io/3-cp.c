@@ -78,17 +78,17 @@ int openFile(char *filename, int mode)
 
 	if (mode == 4)
 	{
-		if (filename == NULL)
-			errorStatus(filename, 98);
 		fd = open(filename, O_RDONLY);
+		if (filename == NULL || fd == -1)
+			errorStatus(filename, 98);
 	}
 	else if (mode == 2)
 	{
-		if (filename == NULL)
-			errorStatus(filename, 99);
 		fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0664);
+		if (filename == NULL || fd == -1)
+			errorStatus(filename, 99);
 	}
-	
+
 	return (fd);
 }
 
@@ -110,10 +110,10 @@ int main(int argc, char *argv[])
 		errorStatus(NULL, 97);
 
 	src = openFile(argv[1], 4);
+	dest = openFile(argv[2], 2);
+
 	buffer = createBuffer(argv[2]);
 	readFrom = read(src, buffer, 1024);
-
-	dest = openFile(argv[2], 2);
 
 	do {
 		if (src == -1 || readFrom == -1)
