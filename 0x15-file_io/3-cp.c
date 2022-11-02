@@ -66,35 +66,6 @@ char *createBuffer(char *filename)
 
 
 /**
- * openFile - Function to open and read source file
- *
- * @filename: source file to read
- * @mode: open file with mode permission
- *
- * Return: int (file descriptor)
- */
-
-int openFile(char *filename, int mode)
-{
-	int fd;
-
-	if (mode == 4)
-	{
-		fd = open(filename, O_RDONLY);
-		if (filename == NULL || fd == -1)
-			errorStatus(filename, 98);
-	}
-	else if (mode == 2)
-	{
-		fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0664);
-		if (filename == NULL || fd == -1)
-			errorStatus(filename, 99);
-	}
-
-	return (fd);
-}
-
-/**
  * main - Entry point
  *
  * @argc: number of command line argument
@@ -111,11 +82,11 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 		errorStatus(NULL, 97);
 
-	src = openFile(argv[1], 4);
-	dest = openFile(argv[2], 2);
-
+	src = open(argv[1], O_RDONLY);
 	buffer = createBuffer(argv[2]);
 	readFrom = read(src, buffer, 1024);
+
+	dest = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 
 	do {
 		if (src == -1 || readFrom == -1)

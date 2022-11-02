@@ -12,7 +12,6 @@ ssize_t read_textfile(const char *, size_t);
 int create_file(const char *, char *);
 int _strlen(char *);
 int append_text_to_file(const char *, char *);
-int openFile(char *, int);
 void errorStatus(char *, int);
 void fdHandler(int);
 char *createBuffer(char *);
