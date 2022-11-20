@@ -17,7 +17,7 @@ int _atoi(char *s)
 	{
 		if (s[index] == '-')
 			sign *= -1;
-		else if (s[index] >= '0' & s[index] <= '9')
+		else if (s[index] >= '0' && s[index] <= '9')
 		{
 			intNum = intNum * 10 + (s[index] - '0');
 		}
