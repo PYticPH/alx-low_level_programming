@@ -18,7 +18,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	newNode = malloc(sizeof(dlistint_t *));
 	if (newNode == NULL)
 	{
-		printf("error: can't allocate memory\n");
+		printf("Error: Can't malloc\n");
 		exit(EXIT_FAILURE);
 	}
 
