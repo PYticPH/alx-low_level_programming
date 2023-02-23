@@ -1,0 +1,4 @@
+all: school
+
+school: school
+	@echo "compiling school"
