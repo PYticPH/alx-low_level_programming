@@ -1,4 +1,9 @@
-all: school
+all : school
 
-school: school
-	@echo "compiling school"
+school : main.c school.c
+	gcc main.c school.c -o school
+
+.PHONY : clean
+
+clean : 
+	rm *.c a.out m.h
