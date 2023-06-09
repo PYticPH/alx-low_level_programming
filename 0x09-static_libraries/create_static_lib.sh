@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 # script to create custom library
 
 #compile files to object files
