@@ -7,3 +7,4 @@ echo "Done: object code created successfully"
 echo "Creating library..."
 ar -rc liball.a "*.o"
 echo "Done: library created successfully"
+
